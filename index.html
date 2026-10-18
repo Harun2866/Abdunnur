@@ -60,10 +60,21 @@
                     </div>
                 </div>
                 <div class="relative flex justify-center">
-                    <div class="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-indigo-500 to-amber-400 p-2 shadow-2xl">
-                        <!-- এখানে প্রোফাইল ছবি বসাবেন -->
-                        <img src="https://via.placeholder.com" alt="আব্দুন নূর" class="rounded-full w-full h-full object-cover bg-white">
-                    </div>
+                    <div class="relative flex flex-col items-center justify-center">
+    <div class="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-indigo-500 to-amber-400 p-2 shadow-2xl relative group">
+        <!-- বর্তমান প্রোফাইল ছবি -->
+        <img src="uploads/profile.jpg" alt="আব্দুন নূর" class="rounded-full w-full h-full object-cover bg-white">
+        
+        <!-- হোভার করলে বা টাচ করলেই ছবি বদলানোর অপশন আসবে -->
+        <form action="upload.php" method="POST" enctype="multipart/form-data" class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+            <label class="cursor-pointer text-white text-center p-3 font-medium text-sm bg-indigo-600/80 rounded-xl hover:bg-indigo-700 transition">
+                <i class="fas fa-camera text-lg mb-1 block"></i> ছবি পরিবর্তন করুন
+                <input type="file" name="newImage" accept="image/*" class="hidden" onchange="this.form.submit()">
+            </label>
+        </form>
+    </div>
+</div>
+
                 </div>
             </div>
         </div>
